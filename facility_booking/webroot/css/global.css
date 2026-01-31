@@ -1,0 +1,352 @@
+/* ============================================
+   Global Application Styles
+   Premium Dark Experience (Exclusive Edition)
+   ============================================ */
+
+:root {
+    /* Premium Maroon Light Palette */
+    --color-primary: #800020;
+    /* Maroon (Official) */
+    --color-primary-dark: #4a0410;
+    /* Darker Maroon for hover */
+    --color-secondary: #64748b;
+    /* Slate Gray for secondary actions */
+    --color-accent: #b45309;
+    /* Gold/Amber for highlights */
+
+    --color-background: #f8fafc;
+    /* Light Off-White Background */
+    --color-background-light: #ffffff;
+    /* Pure White */
+
+    --color-surface: rgba(255, 255, 255, 0.9);
+    --color-surface-hover: rgba(248, 250, 252, 0.95);
+
+    --color-text: #0f172a;
+    /* Dark Slate for primary text */
+    --color-text-secondary: #475569;
+    /* Medium Gray for secondary text */
+    --color-text-muted: #94a3b8;
+    /* Light Gray for muted text */
+
+    --color-border: rgba(148, 163, 184, 0.3);
+    --color-success: #059669;
+    /* Emerald Green */
+    --color-danger: #dc2626;
+    /* Red */
+    --color-warning: #d97706;
+    /* Amber */
+
+    /* Refined Glass Effects (Light Mode) */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: 1px solid rgba(226, 232, 240, 0.8);
+    --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --glass-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --backdrop-blur: blur(12px);
+
+    /* Generous Spacing for "Exclusive" Feel */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+
+    /* Smooth Geometry */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1.5rem;
+
+    /* Transitions */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-background);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(128, 0, 32, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(180, 83, 9, 0.03) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: var(--color-text);
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Links */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* Navigation Bar */
+.top-nav {
+    background: var(--color-primary);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-nav-title a {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.top-nav-title span {
+    color: var(--color-warning);
+    /* Gold/Amber for contrast on Maroon */
+}
+
+.top-nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-base);
+}
+
+.nav-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn {
+    background: var(--color-primary);
+    color: white !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 6px -1px rgba(129, 140, 248, 0.3);
+    transition: var(--transition-base);
+}
+
+.nav-btn:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgba(129, 140, 248, 0.4);
+}
+
+/* Main Container */
+.main {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1400px;
+    /* Wider for dashboard feel */
+}
+
+.container {
+    width: 100%;
+}
+
+/* Cards */
+.content-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--glass-shadow);
+    transition: var(--transition-base);
+}
+
+.content-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glass-shadow-hover);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Forms */
+input,
+select,
+textarea {
+    background: #f1f5f9;
+    /* Light slate background matching the clean email field look */
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    padding: 0.9rem 1.2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition-base);
+    margin-bottom: 1.5rem;
+    display: block;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(128, 0, 32, 0.1);
+    /* Maroon shadow ring */
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+/* Buttons */
+.button,
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-base);
+    border: 1px solid transparent;
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+.button.primary {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button.primary:hover {
+    background: var(--color-primary-dark);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+.button.secondary {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+.button.secondary:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+    /* Row spacing */
+    margin: 2rem 0;
+}
+
+th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+td {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--color-text);
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+tr td:first-child {
+    border-top-left-radius: var(--radius-md);
+    border-bottom-left-radius: var(--radius-md);
+    border-left: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+tr td:last-child {
+    border-top-right-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+    border-right: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Flash Messages */
+.message {
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.message.success {
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    color: var(--color-success);
+}
+
+.message.error {
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    color: var(--color-danger);
+}
+
+.message.hidden {
+    display: none;
+}
